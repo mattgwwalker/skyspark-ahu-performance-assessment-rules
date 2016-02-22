@@ -1,0 +1,19 @@
+//
+// Copyright (c) 2016, Direct Control
+// All Rights Reserved
+//
+// History:
+//   18 Feb 16   Matthew Walker   Creation
+//
+
+--------------------------------------------------------------------------
+name:ahuPerformanceAssessmentRulesTestAxon
+func
+doc:
+  Test stub function
+src:
+  () => do
+    "Test ahuPerformanceAssessmentRules Axon function"
+  end
+--------------------------------------------------------------------------
+
