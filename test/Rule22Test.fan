@@ -17,7 +17,7 @@ using concurrent
 **
 ** AhuPerformanceAssessmentRulesTest
 **
-class AhuPerformanceAssessmentRulesTest : ProjTest
+class Rule22Test : ProjTest
 {
   static Ref createCoolModel(Proj proj, Ref equipRef, Str kind := "Bool")
   {
