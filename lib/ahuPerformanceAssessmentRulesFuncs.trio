@@ -5,6 +5,29 @@
 // History:
 //   18 Feb 16   Matthew Walker   Creation
 //
+--------------------------------------------------------------------------
+name:aparRule01
+func
+dis: APAR Rule 01: Heating mode, but supply air temperature is less than the mixed air temperature
+help:
+  The AHU is in heating mode, but the supply air temperature is less than the mixed air temperature.  The heat added to the air by the supply fan is considered, as is a component for temperature-measurement error.  This spark could be due to:
+  - Supply air temperature sensor error
+  - Mixed air temperature sensor error
+  - Leaking cooling coil valve
+  - Stuck cooling coil valve
+  - Stuck heating coil valve
+  - Undersized heating coil
+  - Hot water temperature supply is too low
+  - Hot water circulating pump fault
+ruleOn: ahu
+doc:
+  Tests for supply air being below mixed air temperature
+src:
+  (rec, date) => do
+    throw "this is an exception"
+    "this is a return value that is not an exception"
+  end
+--------------------------------------------------------------------------
 
 --------------------------------------------------------------------------
 name:aparRule22
