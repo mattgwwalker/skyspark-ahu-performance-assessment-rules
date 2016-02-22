@@ -7,13 +7,47 @@
 //
 
 --------------------------------------------------------------------------
-name:ahuPerformanceAssessmentRulesTestAxon
+name:aparRule22
 func
+dis: APAR Rule 22: Simultaneous Cooling and Heating
+help: Unit is simultaneously cooling and heating.  Check control system.
+ruleOn: ahu
 doc:
-  Test stub function
+  Tests for simultaneous cooling and heating.  Multiple cool points
+  are joined together.  Multiple heat points are treated similarly.
+  The intersection of these joined points is then considerd.
 src:
-  () => do
-    "Test ahuPerformanceAssessmentRules Axon function"
+  (rec, date) => do
+    // Get id of equipment
+    equipRef: rec->id
+
+    // Get cool points
+    coolRecs: readAll(cool and equipRef==equipRef and his and tz and kind)
+    
+    // Get cool histories
+    windows: []
+    coolRecs.each() (row) => do
+      coolHis: hisRead(row, date)
+      coolWindows: coolHis.hisFindPeriods() (val) => try val>0 catch val // handles Bool and Number
+      windows = windows.add(coolWindows)
+    end
+    combinedCoolWindows: hisPeriodUnion(windows)
+
+    // Get heat points
+    heatRecs: readAll(heat and equipRef==equipRef and his and tz and kind)
+
+    // Get heat histories
+    windows = []
+    heatRecs.each() (row) => do
+      heatHis: hisRead(row, date)
+      heatWindows: heatHis.hisFindPeriods() (val) => try val>0 catch val // handles Bool and Number
+      windows = windows.add(heatWindows)
+    end
+    combinedHeatWindows: hisPeriodUnion(windows)
+    
+    // Calculate the intersection of the combined cool and heat points
+    hisPeriodIntersection([combinedCoolWindows, combinedHeatWindows])
   end
 --------------------------------------------------------------------------
+
 
