@@ -32,7 +32,9 @@ class Build : BuildPod
     srcDirs = [`fan/`,
                `test/`]
     resDirs = [`locale/`,
-               `lib/`]
+               `lib/`,
+	       `res/`,
+	       `res/img/`]
     index   =
     [
       "proj.ext": "ahuPerformanceAssessmentRulesExt::AhuPerformanceAssessmentRulesExt",
