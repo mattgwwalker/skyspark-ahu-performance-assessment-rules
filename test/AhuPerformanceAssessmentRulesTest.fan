@@ -383,12 +383,12 @@ class AhuPerformanceAssessmentRulesTest : ProjTest
 
 
 
-/* THESE NEED TO BE UNCOMMENTED ONCE MODEL TESTING IS IMPLEMENTED
+// THESE NEED TO BE UNCOMMENTED ONCE MODEL TESTING IS IMPLEMENTED
   @DbTest
   Void testBasicModelIsComplete()
   {
     ahuRef := createBasicModel(proj)["ahuRef"]
-    verifyEq(AhuPerformanceAssessmentRules.testModel(ahuRef, proj), null)
+    verifyEq(AhuPerformanceAssessmentRulesLib.testModel(ahuRef, proj), null)
   }
 
 
@@ -396,7 +396,7 @@ class AhuPerformanceAssessmentRulesTest : ProjTest
   Void testBasicNumericModelIsComplete()
   {
     ahuRef := createBasicNumericModel(proj)["ahuRef"]
-    verifyEq(AhuPerformanceAssessmentRules.testModel(ahuRef, proj), null)
+    verifyEq(AhuPerformanceAssessmentRulesLib.testModel(ahuRef, proj), null)
   }
 
 
@@ -404,8 +404,8 @@ class AhuPerformanceAssessmentRulesTest : ProjTest
   Void testMultiStageModelIsComplete()
   {
     ahuRef := createMultiStageModel(proj)["ahuRef"]
-    verifyEq(AhuPerformanceAssessmentRules.testModel(ahuRef, proj), null)
+    verifyEq(AhuPerformanceAssessmentRulesLib.testModel(ahuRef, proj), null)
   }
-*/
+
 }
 
