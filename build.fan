@@ -28,7 +28,11 @@ class Build : BuildPod
               ]
     depends = ["sys 1.0",
                "haystack 2.1",
-               "proj 2.1"]
+               "proj 2.1",
+	       "hisExt 2.1",
+	       "hisKitExt 2.1",
+	       "concurrent 1.0",
+	       "util 1.0"]
     srcDirs = [`fan/`,
                `test/`]
     resDirs = [`locale/`,
