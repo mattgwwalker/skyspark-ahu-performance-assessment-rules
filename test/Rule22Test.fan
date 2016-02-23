@@ -19,13 +19,15 @@ using concurrent
 **
 class Rule22Test : ProjTest
 {
+  static const Str currentTz := TimeZone.cur().name
+
   static Ref createCoolModel(Proj proj, Ref equipRef, Str kind := "Bool")
   {
     // Create Cool point
     diff := Diff.makeAdd( ["cool"  : Marker.val,
                            "point" : Marker.val,
                            "his"   : Marker.val,
-                           "tz"    : "Auckland",
+                           "tz"    : currentTz,
                            "kind"  : kind,
 	                   "equipRef": equipRef] )
     diff2 := proj.commit(diff)
@@ -39,7 +41,7 @@ class Rule22Test : ProjTest
     diff := Diff.makeAdd( ["heat"  : Marker.val,
                            "point" : Marker.val,
                            "his"   : Marker.val,
-                           "tz"    : "Auckland",
+                           "tz"    : currentTz,
                            "kind"  : kind,
 	                   "equipRef": equipRef] )
     diff2 := proj.commit(diff)
