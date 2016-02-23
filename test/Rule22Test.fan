@@ -19,6 +19,8 @@ using concurrent
 **
 class Rule22Test : ProjTest
 {
+  // Get the current system time zone.  Extract the city name as that is all
+  // that is used for the Haystack 'tz' tag.  See project-haystack.org/tag/tz
   static const Str currentTz := TimeZone.cur().name
 
   static Ref createCoolModel(Proj proj, Ref equipRef, Str kind := "Bool")
