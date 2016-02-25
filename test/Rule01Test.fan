@@ -15,10 +15,13 @@ using concurrent
 
 
 **
-** 
+** Some class documentation, just to see if it works.
 **
 class Rule01Test : ProjTest
 {
+  **
+  ** Test that an exception is thrown if 'null' is passed as the record
+  **
   @DbTest
   Void testRule01WithNullRecord()
   {
@@ -39,6 +42,7 @@ class Rule01Test : ProjTest
     // Check that an exception was thrown
     verifyEq( exceptionCaught, true )
   }
+
 
 }
 

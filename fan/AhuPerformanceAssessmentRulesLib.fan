@@ -16,6 +16,9 @@ using hisExt
 **
 const class AhuPerformanceAssessmentRulesLib
 {
+  **
+  ** The Fantom method that actually does the model testing.
+  **
   // Returns null on success
   static Str? testModel(Ref ref, Proj? proj := null)
   {
