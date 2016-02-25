@@ -17,17 +17,13 @@ class Build : BuildPod
   new make()
   {
     podName = "ahuPerformanceAssessmentRulesExt"
-    summary = "TODO: summary of pod name..."
-    version = Version("1.0")
-    meta    = [
-                "org.name":     "Direct Control",
-                //"org.uri":      "http://acme.com/",
-                //"proj.name":    "Project Name",
-                //"proj.uri":     "http://acme.com/product/",
-                "license.name": "Commercial",
-		"skyspark.docExt": "true",  // Documentation of Axon/Tags
-		"skyspark.doc": "true",     // Fantom documentation
-              ]
+    summary = "Implementation of NIST AHU Performance Assessment Rules (APAR)"
+    version = Version("0.1")
+    meta    = ["org.name":        "Direct Control",
+               "org.uri":         "http://www.directcontrol.co.nz/",
+               "license.name":    "GPL 3.0",
+               "skyspark.docExt": "true",     // Documentation of Axon/Tags
+               "skyspark.doc":    "true"]     // Fantom documentation
     depends = ["sys 1.0",
                "haystack 2.1",
                "proj 2.1",
