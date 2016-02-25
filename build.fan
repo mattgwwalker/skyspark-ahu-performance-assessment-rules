@@ -25,6 +25,8 @@ class Build : BuildPod
                 //"proj.name":    "Project Name",
                 //"proj.uri":     "http://acme.com/product/",
                 "license.name": "Commercial",
+		"skyspark.docExt": "true",  // Documentation of Axon/Tags
+		"skyspark.doc": "true",     // Fantom documentation
               ]
     depends = ["sys 1.0",
                "haystack 2.1",
