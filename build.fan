@@ -21,6 +21,7 @@ class Build : BuildPod
     version = Version("0.1")
     meta    = ["org.name":        "Direct Control",
                "org.uri":         "http://www.directcontrol.co.nz/",
+	       "proj.name":       "SkySpark", // Required for Fantom documentation
                "license.name":    "GPL 3.0",
                "skyspark.docExt": "true",     // Documentation of Axon/Tags
                "skyspark.doc":    "true"]     // Fantom documentation
