@@ -33,15 +33,15 @@ const class AhuPerformanceAssessmentRulesLib
 
 
   **
-  ** Tests that there is a record within proj that has a supply air
+  ** Tests that there is a record within proj that has a discharge air
   ** temp with an equipRef that points to ref.
   **
-  static Str? testModelHasSupplyAirTemp(Ref ref, Proj? proj := null)
+  static Str? testModelHasDischargeAirTemp(Ref ref, Proj? proj := null)
   {
     filter := "discharge and air and temp and sensor and point and equipRef==$ref.toCode"
     grid := proj.readAll(filter)
     size := grid.size()
-    if (size <= 0) return "No supply (discharge) air temperature was found for '"+ref.toCode()+"'.  There is not at least one match for the filter:\n'$filter'."
+    if (size <= 0) return "No discharge air temperature was found for '"+ref.toCode()+"'.  There is not at least one match for the filter:\n'$filter'."
 
     // No errors found
     return null
@@ -65,18 +65,42 @@ const class AhuPerformanceAssessmentRulesLib
 
 
 
+  **
+  ** Tests that there is a record within proj that has a mixed air
+  ** temp with an equipRef that points to ref.
+  **
+  static Str? testModelHasReturnAirTemp(Ref ref, Proj? proj := null)
+  {
+    filter := "return".toCode + " and air and temp and sensor and point and equipRef==$ref.toCode"
+    grid := proj.readAll(filter)
+    size := grid.size()
+    if (size <= 0) return "No return air temperature was found for '"+ref.toCode()+"'.  There is not at least one match for the filter:\n'$filter'."
+
+    // No errors found
+    return null
+  }
+
+
+
   static Str? testModelRule01(Ref ref, Proj? proj := null)
   {
     // Test that the ref provided is indeed an ahu
     result := testModelHasAhuTag(ref, proj)
     if (result!=null) return result
 
-    // Test that there exists a 'supply air temp' record
-    result = testModelHasSupplyAirTemp(ref, proj)
+    // Test that there exists a 'discharge air temp' record
+    result = testModelHasDischargeAirTemp(ref, proj)
     if (result!=null) return result
 
     // Test that there exists a 'mixed air temp' record
     result = testModelHasMixedAirTemp(ref, proj)
+    if (result!=null) return result
+
+    // Test that there exists a 'return air temp' record
+    result = testModelHasReturnAirTemp(ref, proj)
+    if (result!=null) return result
+
+
     return result
   }
 

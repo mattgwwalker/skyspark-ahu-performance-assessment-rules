@@ -32,6 +32,7 @@ doc:
   Tests for supply air being below mixed air temperature
 src:
   (rec, date) => do
+    # His size comparison
     throw "this is an exception"
     "this is a return value that is not an exception"
   end
