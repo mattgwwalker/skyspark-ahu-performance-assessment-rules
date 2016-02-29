@@ -387,12 +387,11 @@ class Rule22Test : ProjTest
 
 
 
-// THESE NEED TO BE UNCOMMENTED ONCE MODEL TESTING IS IMPLEMENTED
   @DbTest
   Void testBasicModelIsComplete()
   {
     ahuRef := createBasicModel(proj)["ahuRef"]
-    verifyEq(AhuPerformanceAssessmentRulesLib.testModel(ahuRef, proj), null)
+    verifyEq(AhuPerformanceAssessmentRulesLib.testModelRule22(ahuRef, proj), null)
   }
 
 
@@ -400,7 +399,7 @@ class Rule22Test : ProjTest
   Void testBasicNumericModelIsComplete()
   {
     ahuRef := createBasicNumericModel(proj)["ahuRef"]
-    verifyEq(AhuPerformanceAssessmentRulesLib.testModel(ahuRef, proj), null)
+    verifyEq(AhuPerformanceAssessmentRulesLib.testModelRule22(ahuRef, proj), null)
   }
 
 
@@ -408,7 +407,7 @@ class Rule22Test : ProjTest
   Void testMultiStageModelIsComplete()
   {
     ahuRef := createMultiStageModel(proj)["ahuRef"]
-    verifyEq(AhuPerformanceAssessmentRulesLib.testModel(ahuRef, proj), null)
+    verifyEq(AhuPerformanceAssessmentRulesLib.testModelRule22(ahuRef, proj), null)
   }
 
 }
